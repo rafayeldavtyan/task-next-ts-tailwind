@@ -5,6 +5,7 @@ import Step1 from "../Step1";
 import Step2 from "../Step2";
 import Step3 from "../Step3";
 import Step4 from "../Step4";
+import CreateScrape from "../CreateScrape";
 
 interface ModalProps {
     readonly open: boolean,
@@ -35,6 +36,7 @@ export default function CreateModal({
         <Modal
             aria-labelledby="transition-modal-title"
             aria-describedby="transition-modal-description"
+            className="overflow-y-auto"
             open={open}
             onClose={closeHandler}
             closeAfterTransition
@@ -64,7 +66,13 @@ export default function CreateModal({
                     handleClose={closeHandler}
                     handleNextClick={handleNextClick}
                 /> : 
+                (activeStep===4) ?
                 <Step4 
+                    open={open} 
+                    handleClose={closeHandler}
+                    handleNextClick={handleNextClick}
+                /> :
+                <CreateScrape 
                     open={open} 
                     handleClose={closeHandler}
                     handleSubmit={submitHandler}

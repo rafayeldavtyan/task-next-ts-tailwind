@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import AddIcon from '@mui/icons-material/Add';
 import SidebarContent from '@components/SidebarContent';
-import NoJobsContent from '../NoJobsContent';
+import NoContent from '@components/Sections/NoContent';
 import CreateModal from '@components/Modals/CreateModal';
 
 export enum ActiveTabs {
@@ -78,7 +78,7 @@ export default function HomepageSection() {
                 <SidebarContent activeSection={activeSection} sectionChangeHandler={sectionChangeHandler} />
             </Drawer>
 
-            <NoJobsContent />
+            <NoContent item={activeSection} />
             <CreateModal 
                 open={open}
                 handleClose={handleClose}

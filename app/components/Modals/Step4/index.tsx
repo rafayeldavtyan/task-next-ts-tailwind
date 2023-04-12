@@ -9,7 +9,7 @@ import Image from "next/image";
 interface ModalProps {
     readonly open: boolean,
     handleClose: () => void,
-    handleSubmit: () => void,
+    handleNextClick: () => void,
 }
 
 const style = {
@@ -23,7 +23,7 @@ const style = {
     p: 2,
 };
 
-export default function Step4({ open, handleClose, handleSubmit }: ModalProps) {
+export default function Step4({ open, handleClose, handleNextClick }: ModalProps) {
     return (
         <Fade in={open}>
             <Box sx={style} className="laptop:w-modal4 mobile:w-modal2">
@@ -68,7 +68,7 @@ export default function Step4({ open, handleClose, handleSubmit }: ModalProps) {
                         fullWidth
                         disableRipple 
                         className='bg-blue rounded-lg text-white hover:bg-blue'
-                        onClick={handleSubmit}
+                        onClick={handleNextClick}
                         >
                             Next
                     </Button>
