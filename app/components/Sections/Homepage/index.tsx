@@ -10,7 +10,7 @@ import Divider from '@mui/material/Divider';
 import AddIcon from '@mui/icons-material/Add';
 import SidebarContent from '@components/SidebarContent';
 import NoJobsContent from '../NoJobsContent';
-import Step1 from '@components/Modals/Step1';
+import CreateModal from '@components/Modals/CreateModal';
 
 export enum ActiveTabs {
     scrape = 'Scrape',
@@ -21,9 +21,11 @@ export enum ActiveTabs {
 const drawerWidth = 240;
 
 export default function HomepageSection() {
-    const [activeSection, setActiveSection] = useState(ActiveTabs.jobs);
+    const [activeSection, setActiveSection] = useState(ActiveTabs.scrape);
     const [open, setOpen] = React.useState(false);
+
     const handleOpen = () => setOpen(true);
+    
     const handleClose = () => setOpen(false);
 
     const sectionChangeHandler = (section:ActiveTabs) => () => setActiveSection(section);
@@ -77,7 +79,7 @@ export default function HomepageSection() {
             </Drawer>
 
             <NoJobsContent />
-            <Step1
+            <CreateModal 
                 open={open}
                 handleClose={handleClose}
                 handleSubmit={handleClose}

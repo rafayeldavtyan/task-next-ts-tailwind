@@ -16,11 +16,12 @@ export default function LoginForm({ handleSubmit }: LoginProps<(event: React.For
         <>
             <Box
                 sx={{
-                    width: 500,
                     borderRadius: '16px',
                     background: '#fff',
                     boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05), 0px 8px 24px rgba(16, 24, 40, 0.1)'
-                }}>
+                }}
+                className="laptop:w-loginform3 mobile_laptop:w-loginform2 mobile:w-loginform1"
+            >
                 <CssBaseline />
                 <Box
                     sx={{
@@ -29,19 +30,19 @@ export default function LoginForm({ handleSubmit }: LoginProps<(event: React.For
                         flexDirection: 'column',
                         alignItems: 'center',
                     }}
-                    >
-                    <Typography className='font-bold text-3xl' >
+                >
+                    <Typography className='font-bold text-3xl'>
                         Login
                     </Typography>
-                    <Typography className='text-grey mt-10' >
+                    <Typography className='text-grey mt-10'>
                         Welcome back! Please enter your details.
                     </Typography>
                     <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1, width: '100%' }}>
-                        <Typography className='font-semibold mt-25 mb-5' >
+                        <Typography className='font-semibold mt-25 mb-5'>
                             Email
                         </Typography>
                         <TextField
-                            inputProps={{ maxLength: 30, className: 'radius-8' }}
+                            inputProps={{ maxLength: 25, className: 'radius-8' }}
                             required
                             fullWidth
                             className='rounded-lg border-2 login-input font-normal !text-sm'
@@ -53,7 +54,7 @@ export default function LoginForm({ handleSubmit }: LoginProps<(event: React.For
                             Password
                         </Typography>
                         <TextField
-                            inputProps={{ maxLength: 30, className: 'radius-8' }}
+                            inputProps={{ maxLength: 25, className: 'radius-8' }}
                             required
                             fullWidth
                             className='rounded-lg border-2 login-input font-normal !text-sm'
@@ -64,7 +65,7 @@ export default function LoginForm({ handleSubmit }: LoginProps<(event: React.For
                         >
                         </TextField>
                         <Box className='relative'>
-                            <Link href='/forgot' className='absolute bottom-20 right-20 w-auto no-underline font-normal !text-sm text-blue cursor-pointer'>
+                            <Link href='/forgot' className='mobile:static laptop:absolute bottom-20 right-20 w-auto no-underline font-normal !text-sm text-blue cursor-pointer'>
                                 Forgot password?
                             </Link>
                         </Box>

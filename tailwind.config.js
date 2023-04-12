@@ -38,7 +38,21 @@ module.exports = {
             height: {
                 'fh': '100vh',
             },
+            screens: {
+                'mobile': '320px',
+                'mobile_laptop': '420px',
+                'laptop': '668px',
+                'desktop': '10240px',
+                // => @media (min-width: 1280px) { ... }
+            },
             width: {
+                'modal4': '550px',
+                'modal3': '450px',
+                'modal2': '350px',
+                'modal1': '250px',
+                'loginform3': '500px',
+                'loginform2': '400px',
+                'loginform1': '300px',
                 'fw': '100vw',
             },
             minHeight: {
